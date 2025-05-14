@@ -12,6 +12,7 @@ As this needs to be done urgently, you will only have at most 4 hours to build s
 
 ### Requirements
 - You should spend no more than 4 hours on this programming assignment.
+- You may not use LLM's to solve any part of this task. We are not against using AI in coding assistance, but this task is to show your thought process and skill level, not your ability to prompt engineer.
 - If you make changes to what is required to run the application in any way, you must ensure this README.md is updated under the Setup section. If we cannot run your solution it is likely an automatic failure.
 - You are required to use git as you work on the project.
 - We will be checking the git commit history in terms of both content and the commit message.
