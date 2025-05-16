@@ -47,7 +47,7 @@ public class ConsoleApp(
         {
             logger.LogInformation("Console app started");
             
-            //await SamplePeriodicCall(cancellationToken);
+            await SamplePeriodicCall(cancellationToken);
             //await SampleStreamFunction(cancellationToken);
             //await SampleEFCoreQuery(cancellationToken);
             //await SampleDapperQuery(cancellationToken);

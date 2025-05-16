@@ -20,19 +20,19 @@ public static class MigrateAndSeed
         new LocationInfo(55.869850m, 9.031852m, 0, Grid.DK1),
         new LocationInfo(55.793754099091m, 9.206863731838936m, 0, Grid.DK1),
 
+        new LocationInfo(55.400354m, 10.271406m, 0, Grid.DK2),
+        new LocationInfo(55.584136m, 11.434430m, 0, Grid.DK2),
+        new LocationInfo(55.70499052361521m, 12.261875717241127m, 0, Grid.DK2),
+        new LocationInfo(55.412463m, 11.956562m, 0, Grid.DK2),
+        new LocationInfo(55.294023m, 11.949378m, 0, Grid.DK2),
+        
         new LocationInfo(55.704459m, 9.204887m, 0, Grid.DK1),
         new LocationInfo(55.804195m, 9.22219m, 0, Grid.DK1),
         new LocationInfo(55.843865m, 9.231267m, 0, Grid.DK1),
         new LocationInfo(55.553115m, 8.997907m, 0, Grid.DK1),
         new LocationInfo(55.769850m, 9.081852m, 0, Grid.DK1),
         new LocationInfo(55.893754m, 9.105731m, 0, Grid.DK1),
-        //DK2
-        new LocationInfo(55.400354m, 10.271406m, 0, Grid.DK2),
-        new LocationInfo(55.584136m, 11.434430m, 0, Grid.DK2),
-        new LocationInfo(55.70499052361521m, 12.261875717241127m, 0, Grid.DK2),
-        new LocationInfo(55.412463m, 11.956562m, 0, Grid.DK2),
-        new LocationInfo(55.294023m, 11.949378m, 0, Grid.DK2),
-
+    
         new LocationInfo(55.410354m, 10.261406m, 0, Grid.DK2),
         new LocationInfo(55.594136m, 11.455430m, 0, Grid.DK2),
         new LocationInfo(55.804411m, 12.261331m, 0, Grid.DK2),
@@ -92,15 +92,13 @@ public static class MigrateAndSeed
             Name = "Group 3",
             Meters = []
         };
-        
+
         var group4 = new Group
         {
             Id = 4,
             Name = "Group 4",
             Meters = []
         };
-        
-        
         
         groups.Add(group1);
         groups.Add(group2);
@@ -138,6 +136,7 @@ public static class MigrateAndSeed
                     Meters = []
                 };
                 
+                context.Sites.Add(site);
                 sites.Add(site);
             }
             

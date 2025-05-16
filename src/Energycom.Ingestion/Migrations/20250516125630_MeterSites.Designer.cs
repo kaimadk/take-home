@@ -3,6 +3,7 @@ using System;
 using Energycom.Ingestion.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Energycom.Ingestion.Migrations
 {
     [DbContext(typeof(ECOMDbContext))]
-    partial class ECOMDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250516125630_MeterSites")]
+    partial class MeterSites
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -125,18 +128,31 @@ namespace Energycom.Ingestion.Migrations
                         .HasColumnType("uuid")
                         .HasColumnName("id");
 
-                    b.Property<DateTime>("IngestionDate")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("ingestion_date");
-
                     b.Property<int>("MeterId")
                         .HasColumnType("integer")
                         .HasColumnName("meter_id");
+
+                    b.Property<bool>("Parsed")
+                        .HasColumnType("boolean")
+                        .HasColumnName("parsed");
 
                     b.Property<string>("RawJson")
                         .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("raw_json");
+
+                    b.Property<DateTime>("ReadingDate")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("reading_date");
+
+                    b.Property<string>("Unit")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("unit");
+
+                    b.Property<decimal>("Value")
+                        .HasColumnType("numeric")
+                        .HasColumnName("value");
 
                     b.HasKey("Id")
                         .HasName("pk_readings");

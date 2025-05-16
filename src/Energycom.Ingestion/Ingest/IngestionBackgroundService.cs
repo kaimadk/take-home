@@ -90,11 +90,9 @@ public class TimedHostedService : IHostedService, IDisposable
                 reading = new Reading
                 {
                     Id = Guid.CreateVersion7(),
-                    RawJson =  "Uh oh! Something went wrong",
-                    Parsed = false,
+                    RawJson =  "SOME FUNKY JSON, TBD",
                     MeterId = meter.Id,
                     Meter = meter,
-                    Unit = "??????",
                 };
             }
             else
@@ -110,12 +108,9 @@ public class TimedHostedService : IHostedService, IDisposable
                 {
                     Id = Guid.CreateVersion7(),
                     RawJson =  System.Text.Json.JsonSerializer.Serialize(rawReading) ,
-                    Parsed =true,
                     MeterId = meter.Id,
                     Meter = meter,
-                    ReadingDate = rawReading.Timestamp,
-                    Unit =  rawReading.Unit,
-                    Value = rawReading.Value
+                    IngestionDate = DateTime.UtcNow
                 };
                 
             }
@@ -132,12 +127,9 @@ public class TimedHostedService : IHostedService, IDisposable
             {
                 Id = Guid.CreateVersion7(),
                 RawJson =  reading.RawJson ,
-                ReadingDate = reading.ReadingDate,
-                Parsed =true,
+                IngestionDate = reading.IngestionDate,
                 MeterId = meter.Id,
                 Meter = meter,
-                Unit =  reading.Unit,
-                Value = reading.Value
             };
             
             _context.Add(duplicateReading);

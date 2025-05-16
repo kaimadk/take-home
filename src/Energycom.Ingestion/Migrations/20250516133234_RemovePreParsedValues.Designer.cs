@@ -3,6 +3,7 @@ using System;
 using Energycom.Ingestion.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Energycom.Ingestion.Migrations
 {
     [DbContext(typeof(ECOMDbContext))]
-    partial class ECOMDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250516133234_RemovePreParsedValues")]
+    partial class RemovePreParsedValues
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
