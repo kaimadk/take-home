@@ -78,6 +78,14 @@ app.MapGet("/readings/{from:datetime}/{to:datetime}", async (DateTime from, Date
     return Results.Ok(readings.Select(MapToReadingModel).ToList());
 }).WithName("GetReadings").WithTags("Get readings between from(inclusive) and to(exclusive)");
 
+app.MapPost("/readings/reset", async ([FromServices] ECOMDbContext context) =>
+{
+    var readings = await context.Readings.ToListAsync();
+    context.RemoveRange(readings);
+    await context.SaveChangesAsync();
+    return Results.Ok("Reset");
+}).WithName("ResetReadings").WithTags("Delete all readings");
+
 
 
 

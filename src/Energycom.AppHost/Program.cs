@@ -3,10 +3,9 @@ using Projects;
 
 var builder = DistributedApplication.CreateBuilder(args);
 
-IResourceBuilder<PostgresServerResource> postgres = builder.AddPostgres("PostgresServer")
+IResourceBuilder<PostgresServerResource> postgres = builder.AddPostgres("EnergycomDbServer")
     .WithDataVolume()
     .WithLifetime(ContainerLifetime.Persistent)
-    .WithEndpoint(port: 25432, targetPort: 5432, scheme: "https", name: "postgres-port" )
     .WithPgAdmin(opts => opts.WithHostPort(23371));
 
 

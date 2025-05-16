@@ -8,6 +8,8 @@ public class Meter
     
     public Group Group { get; set; }
     
+    public Site Site { get; set; }
+    
     public required string MeterNumber { get; set; }
     
     public List<Reading> Readings { get; set; }
