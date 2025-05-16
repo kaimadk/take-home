@@ -9,14 +9,12 @@ We would like you to implement whatever is necessary for the EnergyCom.Analysis 
 - What devices do we have, and what information do we have on them?
 - Any other information you find pertinent to make available, based on the raw data and what you can imagine it could be used for.
 
-The previous developer started Energycom.Analysis, which has methods to retrieve data from the API and database directly. You are free to continue with this program or you may create your own (in whatever programming language you prefer). This project will still be useful to helop you understand what kind of data you are dealing with. Additionally there is API documention at a /scalar endpoint on the ingestion service. You can find this endpoint in the aspire dashboard, or use the helper method to reach this.
+At bare minimum there must be callable methods that provide answers to the questions above, and it must be possible to run the application 
+and get at that information - whether through the commandline, a dashboard, raw files or whatever you find appropriate.
 
-At bare minimum there must be callable methods that provide answers to the questions above, and it must be possible to run the application and get at that information - whether through
-the commandline, a dashboard, raw files or whatever you find appropriate.
-
-EnergyCom is aware that this isn’t much time, so you’ll be expected to prioritize your time on the things you find important, to reason about why you’ve made the choices you have,
-and to have a plan for further work than what you can do in those 4 hours. In other words, build the application in a way where someone else can take it over
-and continue work on it without issue.
+The previous developer started Energycom.Analysis, which has methods to retrieve data from the API and database directly. You are free to continue with this program 
+or you may create your own (in whatever programming language you prefer). This project will still be useful to helop you understand what kind of data you are dealing with. 
+Additionally there is API documention at a /scalar endpoint on the ingestion service. You can find this endpoint in the aspire dashboard, or use the helper method to reach this.
 
 ![alt text](docs/scalar_aspire.png)
 
@@ -24,6 +22,8 @@ and continue work on it without issue.
 
 ### Take-home requirements
 - You should spend up to, but no more than 4 hours writing code on this take-home assignment. Please write down how long you spent at the end.
+- You should prioritize your time on the things you find important, to reason about why you’ve made the choices you have, and to have a plan for further work
+  than what you can do in those 4 hours. In other words, build the application in a way where someone else could take it over and continue work on it.
 - Please do not use LLM's to solve any part of this task.
 - If you make changes to what is required to run the application in any way, you must ensure this README.md is updated under the Setup section. If we cannot run your solution it is likely an automatic failure.
 - You are required to use git and git commits as you work on the project. We'll be checking the commit history and contents as part of our assessment.
