@@ -9,7 +9,7 @@ We would like you to implement whatever is necessary for the EnergyCom.Analysis 
 - What devices do we have, and what information do we have on them?
 - Any other information you find pertinent to make available, based on the raw data and what you can imagine it could be used for.
 
-The previous developer started a Energycom.Analysis project that has methods to retrieve data from the API and database directly. You are free to continue with this program or you may create your own (in whatever programming language you prefer). This project will still be useful to helop you understansd what kind of data you are dealing with. Additionally there is API documention at a /scalar endpoint on the ingestion service. You can find this endpoint in the aspire dashboard, or use the helper method to reach this.
+The previous developer started Energycom.Analysis, which has methods to retrieve data from the API and database directly. You are free to continue with this program or you may create your own (in whatever programming language you prefer). This project will still be useful to helop you understand what kind of data you are dealing with. Additionally there is API documention at a /scalar endpoint on the ingestion service. You can find this endpoint in the aspire dashboard, or use the helper method to reach this.
 
 At bare minimum there must be callable methods that provide answers to the questions above, and it must be possible to run the application and get at that information - whether through
 the commandline, a dashboard, raw files or whatever you find appropriate.
