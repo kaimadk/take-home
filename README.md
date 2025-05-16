@@ -21,15 +21,14 @@ Additionally there is API documention at a /scalar endpoint on the ingestion ser
 ### Existing Architecture
 
 ### Take-home requirements
-- You should spend up to, but no more than 4 hours writing code on this take-home assignment. Please write down how long you spent at the end.
-- You should prioritize your time on the things you find important, to reason about why you’ve made the choices you have, and to have a plan for further work
-  than what you can do in those 4 hours. In other words, build the application in a way where someone else could take it over and continue work on it.
-- Please do not use LLM's to solve any part of this task.
-- If you make changes to what is required to run the application in any way, you must ensure this README.md is updated under the Setup section. If we cannot run your solution it is likely an automatic failure.
-- You are required to use git and git commits as you work on the project. We'll be checking the commit history and contents as part of our assessment.
-- You are encouraged to document your reasoning, priorities and general thoughts as you go along, in the THOUGHTS.MD markdown file.
-- You may not change the code or contents of the project called `EnergyCom.Ingestion` - consider it a black box that simply create data.
-- You can create whatever extra projects you'd like, and tweak the others, as long as you remember to leave instructions on how to run them and set them up in this file.
+- You **should** spend up to, but no more than 4 hours writing code on this assignment. Write down how long you spent at the end.
+- You **must** build the application in a way where someone else could take it over and continue work on it.
+- You **must not** use LLM's to solve any part of this task.
+- You **must** keep the README.md file up-to-date in terms of installation and setup instructions. If we cannot run your solution, we cannot assess your take-home. 
+- You **must** use git and git commits as you work on the project. We'll be checking the commit history and contents as part of our assessment.
+- You **may** document your reasoning, priorities and general thoughts as you go along, in the THOUGHTS.MD markdown file.
+- You **must not** change the code or contents of the project called `EnergyCom.Ingestion` - consider it a black box that simply creates data.
+- You **may**** whatever extra projects you'd like, and tweak the others, as long as you remember to leave instructions on how to run them and set them up in this file.
 
 ### Pre-requisites
 
