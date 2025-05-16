@@ -28,7 +28,7 @@ Additionally there is API documention at a /scalar endpoint on the ingestion ser
 - You **must** use git and git commits as you work on the project. We'll be checking the commit history and contents as part of our assessment.
 - You **may** document your reasoning, priorities and general thoughts as you go along, in the THOUGHTS.MD markdown file.
 - You **must not** change the code or contents of the project called `EnergyCom.Ingestion` - consider it a black box that simply creates data.
-- You **may**** whatever extra projects you'd like, and tweak the others, as long as you remember to leave instructions on how to run them and set them up in this file.
+- You **may** whatever extra projects you'd like, and tweak the others, as long as you remember to leave instructions on how to run them and set them up in this file.
 
 ### Pre-requisites
 
