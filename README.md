@@ -1,4 +1,23 @@
-# Backstory
+# Installation & setup instructions
+### Pre-requisites
+
+install [dotnet 9](https://dotnet.microsoft.com/en-us/download/dotnet/9.0) 
+install [docker](https://www.docker.com/) 
+
+(TODO)
+
+# Take-home assignment
+## Take-home requirements
+- You **should** spend up to, but no more than 4 hours writing code on this assignment. Write down how long you spent at the end.
+- You **must** build the application in a way where someone else could take it over and continue work on it.
+- You **must not** use LLM's to solve any part of this task.
+- You **must** keep the README.md file up-to-date in terms of installation and setup instructions. If we cannot run your solution, we cannot assess your take-home. 
+- You **must** use git and git commits as you work on the project. We'll be checking the commit history and contents as part of our assessment.
+- You **may** document your reasoning, priorities and general thoughts as you go along, in the THOUGHTS.MD markdown file.
+- You **must not** change the code or contents of the project called `EnergyCom.Ingestion` - consider it a black box that simply creates data.
+- You **may** whatever extra projects you'd like, and tweak the others, as long as you remember to leave instructions on how to run them and set them up in this file.
+
+## Backstory
 You are a developer at EnergyCom, an electricity company that manages thousands of electricity meters across multiple countries. You’ve taken over a codebase left behind by a developer who didn’t finish the project before leaving, and we’d like you to finish what they started. The aim of the project is to produce an Analysis application that can answer high-level questions
 based on reading raw data.
 
@@ -20,20 +39,7 @@ Additionally there is API documention at a /scalar endpoint on the ingestion ser
 
 ### Existing Architecture
 
-### Take-home requirements
-- You **should** spend up to, but no more than 4 hours writing code on this assignment. Write down how long you spent at the end.
-- You **must** build the application in a way where someone else could take it over and continue work on it.
-- You **must not** use LLM's to solve any part of this task.
-- You **must** keep the README.md file up-to-date in terms of installation and setup instructions. If we cannot run your solution, we cannot assess your take-home. 
-- You **must** use git and git commits as you work on the project. We'll be checking the commit history and contents as part of our assessment.
-- You **may** document your reasoning, priorities and general thoughts as you go along, in the THOUGHTS.MD markdown file.
-- You **must not** change the code or contents of the project called `EnergyCom.Ingestion` - consider it a black box that simply creates data.
-- You **may** whatever extra projects you'd like, and tweak the others, as long as you remember to leave instructions on how to run them and set them up in this file.
 
-### Pre-requisites
-
-install [dotnet 9](https://dotnet.microsoft.com/en-us/download/dotnet/9.0) 
-install [docker](https://www.docker.com/) 
 
 ### Helpful starting tips
 
