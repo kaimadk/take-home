@@ -22,6 +22,4 @@ var analysis = builder.AddProject<Energycom_Analysis>("Analysis")
     .WaitFor(db)
     .WaitFor(backend);
 
-
-
 builder.Build().Run();

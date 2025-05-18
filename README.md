@@ -4,7 +4,23 @@
 - install [dotnet 9](https://dotnet.microsoft.com/en-us/download/dotnet/9.0) 
 - install [docker](https://www.docker.com/) 
 
-The application runs in dotnet [aspire](https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview). This is analogous to docker compose with some extra bells and whistles. You can run the entire solution via the command line from the /src folder
+The application runs in dotnet [aspire](https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview). This is analogous to docker compose with some extra bells and whistles to make local dev easier.
+
+Navigate to the /src folder
+
+first install the aspire workload
+
+```bash
+    dotnet workload install aspire
+```
+
+then trust the local dev cert
+
+```bash
+    dotnet dev-certs https -t
+```
+
+finally you can run the entire solution with 
 
 ```bash
     dotnet run --project Energycom.AppHost/Energycom.AppHost.csproj
@@ -58,7 +74,7 @@ This aspire dashboard exposes a preconfigured pg-admin for each db server for yo
 
 This dahsboard exposes metrics, structed logging and tracing capabilities. It might be important to keep an eye on the logs. 
 
-The Energycom.Analysis project is automatically wired to post logs and tracrs here. 
+The Energycom.Analysis project is automatically wired to post logs and traces here. 
 
 *NB* There is a current issue with aspire where exposed containers require the aspire app-host to be running to access them (due to some configured docker proxy settings). In other words if you need to query the database the app host project needs to be running. 
 
