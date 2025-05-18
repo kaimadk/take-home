@@ -81,7 +81,7 @@ public class ConsoleApp(
 
 
         var sql =
-            @"SELECT r.Id, r.raw_json as RawJson, r.reading_date as TimeStamp, r.meter_id as MeterId, m.meter_number as MeterNumber, g.Name as GroupName
+            @"SELECT r.Id, r.raw_json as RawJson, r.ingestion_date as TimeStamp, r.meter_id as MeterId, m.meter_number as MeterNumber, g.Name as GroupName
                     FROM readings r
                     inner join meters m on r.meter_id = m.id
                     inner join groups g on g.id = m.group_id;";
