@@ -28,7 +28,7 @@ finally you can run the entire solution with
 
 or by running the apphost project with your IDE of choice (VSCode, Rider, VisualStudio etc). If using jetbrains rider you may like the [aspire plugin](https://plugins.jetbrains.com/plugin/23289--net-aspire) which has many useful features such as restarting individual projects without the apphost, auto adding the database to your databases window whilst running etc. 
 
-#Aspire
+### Aspire
 
 The application runs in dotnet [aspire](https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview). This is analogous to docker compose with some extra bells and whistles to make local dev easier. Aspire acts as an orchastrator, an open telemetry/structured logging/metrics sink and as a resource dashboard. When you run the aspire host it starts all dependant projects. If you run this in debug all projects will run in debug in seperate processes.
 
