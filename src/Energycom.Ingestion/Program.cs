@@ -64,6 +64,8 @@ app.MapScalarApiReference($"/scalar", options =>
 
 app.UseHttpsRedirection();
 
+app.MapGet("", () => Results.Redirect("/scalar", true));
+
 app.MapGet("/sites", async ([FromServices] ECOMDbContext context) =>
 {
     var sites = await context.Sites

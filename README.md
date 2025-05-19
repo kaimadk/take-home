@@ -4,7 +4,7 @@
 - install [dotnet 9](https://dotnet.microsoft.com/en-us/download/dotnet/9.0) 
 - install [docker](https://www.docker.com/) 
 
-The application runs in dotnet [aspire](https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview). This is analogous to docker compose with some extra bells and whistles to make local dev easier.
+
 
 Navigate to the /src folder
 
@@ -26,7 +26,27 @@ finally you can run the entire solution with
     dotnet run --project Energycom.AppHost/Energycom.AppHost.csproj
 ```
 
-or by running the apphost project with your IDE of choice (VSCode, Rider, VisualStudio etc).
+or by running the apphost project with your IDE of choice (VSCode, Rider, VisualStudio etc). If using jetbrains rider you may like the [aspire plugin](https://plugins.jetbrains.com/plugin/23289--net-aspire) which has many useful features such as restarting individual projects without the apphost etc. THis functionality is being built into an aspire cli by microsoft 
+
+#Aspire
+
+The application runs in dotnet [aspire](https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview). This is analogous to docker compose with some extra bells and whistles to make local dev easier. Aspire acts as an orchastrator, an open telemetry/structured logging/metrics sink and as a resource dashboard. When you run the aspire host it starts all dependant projects. If you run this in debug all projects will run in debug in seperate processes.
+
+When running the apphost a dashboard will be spun up. This should automatically open but the link should appear in your logs
+
+![alt text](/docs/logout_apsire.png)
+
+The dashboard exposes all of the resources, their health and their relavant urls. A context menu in available for each resource by hitting the three dots. The ingestion project has api documentation in this context menu by selecting the 'scalar' option.
+
+![alt text](/docs/dashboard_aspire.png)
+
+Aspire is new and is experiencing rapid iteration so there are some rough edges. Running the aspire application should succeed and all elements should function, although there may be issues in the logic of the code. If you have technical issues with this step please reach out by email to kevin.obrien@kaima.dk and martin.grunbaum@kaima.dk although please do check the [troubleshooting section](https://learn.microsoft.com/en-us/dotnet/aspire/) before reaching out :) 
+
+The aspire dashboard exposes all environment variables such as injected connection strings, urls and configuration etc.  by selecting 'View Details' in the resource context menu
+
+![alt text](/docs/variables_aspire.png)
+
+These may or may not be useful to you depending on how you go about solving the take home assignment. 
 
 # Take-home assignment
 ## Take-home requirements
@@ -65,17 +85,26 @@ The current architecture of the solution is as shown.
 
 The ingestion service writes raw readings to the energycom db. The sample anaylsis project reads data from both the ingestion service and energycom db.
 
+These services are wired for resilience with time-outs. If you are debugging this may cause you to see task cancelled exceptions. If you would prefer not to see this behaviour you can comment out the line
+
+```csharp
+   http.AddStandardResilienceHandler();
+```
+
+at `Energycom.ServiceDefaults/Extensions.cs` which configures various health and service defaults for all projects in the solution.
+
+
 ### Helpful starting tips
 
 Take a look at the scalar api documentation at /scalar under the ingestion project for hints at what is currently available.
 There is a reset method on readings to clean out readings in case that is desirable for you.
 
-This aspire dashboard exposes a preconfigured pg-admin for each db server for your convienance but feel free to use any other database management tool of your choice.
+This aspire dashboard exposes a preconfigured pg-admin for the db server for your convienance but feel free to use any other database management tool of your choice.
 
 This dahsboard exposes metrics, structed logging and tracing capabilities. It might be important to keep an eye on the logs. 
 
 The Energycom.Analysis project is automatically wired to post logs and traces here. 
 
-*NB* There is a current issue with aspire where exposed containers require the aspire app-host to be running to access them (due to some configured docker proxy settings). In other words if you need to query the database the app host project needs to be running. 
+*NB* There is a current issue with aspire where exposed containers require the aspire app-host to be running to access them (due to some configured docker proxy settings). In other words if you need to query the database the app host project needs to be running. This is a known limitatio and is actively being worked on my msft.
 
 
