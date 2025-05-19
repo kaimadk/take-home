@@ -26,7 +26,7 @@ finally you can run the entire solution with
     dotnet run --project Energycom.AppHost/Energycom.AppHost.csproj
 ```
 
-or by running the apphost project with your IDE of choice (VSCode, Rider, VisualStudio etc). If using jetbrains rider you may like the [aspire plugin](https://plugins.jetbrains.com/plugin/23289--net-aspire) which has many useful features such as restarting individual projects without the apphost etc. THis functionality is being built into an aspire cli by microsoft 
+or by running the apphost project with your IDE of choice (VSCode, Rider, VisualStudio etc). If using jetbrains rider you may like the [aspire plugin](https://plugins.jetbrains.com/plugin/23289--net-aspire) which has many useful features such as restarting individual projects without the apphost, auto adding the database to your databases window whilst running etc. 
 
 #Aspire
 
