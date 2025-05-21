@@ -116,7 +116,13 @@ app.Run();
 
 async IAsyncEnumerable<ReadingModelV1> GetDataWithCancellationAsync(NotificationHub hub, ILogger logger,  [EnumeratorCancellation] CancellationToken cancellationToken = default)
 {
+
     var channel = await hub.Subscribe();
+    cancellationToken.Register(() =>
+    {
+        logger.LogInformation("Cancellation requested, stopping stream.");
+        hub.Unsubscribe(channel);
+    });
     while (!cancellationToken.IsCancellationRequested)
     { 
         await foreach (var reading in channel.Reader.ReadAllAsync(cancellationToken))
@@ -127,8 +133,8 @@ async IAsyncEnumerable<ReadingModelV1> GetDataWithCancellationAsync(Notification
         }
     }
 
-    logger.LogInformation("Cancellation requested, stopping stream.");
-    await hub.Unsubscribe(channel);
+   
+   
 }
 
 static ReadingModelV1 MapToReadingModel(Reading reading)

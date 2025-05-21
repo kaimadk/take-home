@@ -173,7 +173,7 @@ public static class MigrateAndSeed
             int numberSkippingMetersPerGroup = Random.Shared.Next(1, 4);
             int numberDuplicatingMeters = Random.Shared.Next(1, 4);
             int numberOfProductionMeters = Random.Shared.Next(1, 6);
-            int numberFaultyMeters = 0;
+            int numberFaultyMeters = Random.Shared.Next(1, 3);
             
             //select ids for skipping  and duplicating meters
             

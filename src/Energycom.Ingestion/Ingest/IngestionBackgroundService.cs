@@ -85,21 +85,30 @@ public class TimedHostedService : IHostedService, IDisposable
             }
             
             Reading reading;
+            var value = meter.Configuration.BaseValue * (decimal)valueScalar;
             if (meter.Configuration.CanHaveUnparsedReadings && applyEffect)
             {
                 reading = new Reading
                 {
                     Id = Guid.CreateVersion7(),
-                    RawJson =  "SOME FUNKY JSON, TBD",
+                    RawJson =  @$"{{
+                        ""Value"": {Convert.ToHexString(decimal.GetBits(value)
+                            .SelectMany(BitConverter.GetBytes)
+                            .ToArray())},
+                        ""Unit"": ""kwh"",
+                        ""Timestamp"": ""{DateTime.UtcNow:O}""
+                        }}",
                     MeterId = meter.Id,
+                    IngestionDate = DateTime.UtcNow,
                     Meter = meter,
                 };
+                _logger.LogError("Ingested an erroring reading for {MeterNumber}. Please handle :)", meter.MeterNumber);
             }
             else
             {
                 
                 var rawReading = new RawReading(
-                    Value: meter.Configuration.BaseValue * (decimal)valueScalar,
+                    Value: value,
                     Unit: "kwh",
                     Timestamp: DateTime.UtcNow
                 );

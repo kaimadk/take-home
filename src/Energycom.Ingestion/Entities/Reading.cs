@@ -10,5 +10,5 @@ public class Reading
     
     public required Meter Meter { get; set; }
     
-    public DateTime IngestionDate { get; set; }
+    public required DateTime IngestionDate { get; set; }
 }
